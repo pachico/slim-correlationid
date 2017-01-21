@@ -1,14 +1,15 @@
 {
     "name": "pachico/slim-correlationid",
     "type": "library",
-    "description": "Middlewarez",
+    "description": "Resolves and propagates correlation id",
     "keywords": [
         "pachico",
         "correlation id",
         "cId",
         "request id",
         "slim",
-        "middleware"
+        "middleware",
+        "slim"
     ],
     "homepage": "https://github.com/pachico/slim-correlationid",
     "license": "MIT",
