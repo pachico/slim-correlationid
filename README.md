@@ -1,6 +1,6 @@
 # slim-correlationid
 
-[![Build Status](https://travis-ci.org/pachico/slim-correlationid.svg?branch=master)](https://travis-ci.org/pachico/slim-correlationid) [![codecov](https://codecov.io/gh/pachico/slim-correlationid/branch/master/graph/badge.svg)](https://codecov.io/gh/pachico/slim-correlationid)
+[![Build Status](https://travis-ci.org/pachico/slim-correlationid.svg?branch=master)](https://travis-ci.org/pachico/slim-correlationid) [![codecov](https://codecov.io/gh/pachico/slim-correlationid/branch/master/graph/badge.svg)](https://codecov.io/gh/pachico/slim-correlationid) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pachico/slim-correlationid/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pachico/slim-correlationid/?branch=master)
 
 
 Resolves and propagates correlation ids. If none, it will create one. If callable is provided, it will invoke it as soon as it resolves/creates it.
