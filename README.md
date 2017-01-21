@@ -1,5 +1,7 @@
 # slim-correlationid
 
+[![Build Status](https://travis-ci.org/pachico/slim-correlationid.svg?branch=master)](https://travis-ci.org/pachico/slim-correlationid)
+
 Resolves and propagates correlation ids. If none, it will create one. If callable is provided, it will invoke it as soon as it resolves/creates it.
 
 Especially useful for microservices platforms.
