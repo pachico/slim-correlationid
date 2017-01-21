@@ -91,7 +91,7 @@ class CorrelationIdTest extends \PHPUnit_Framework_TestCase
         // Arrange
         $this->generatorMock->expects($this->never())->method('create')->will($this->returnValue(static::TEST_ID));
         $this->requestMock->expects($this->once())->method('withHeader')->will($this->returnSelf());
-        $this->requestMock->expects($this->exactly(2))->method('getHeaderLine')
+        $this->requestMock->expects($this->once())->method('getHeaderLine')
             ->will($this->returnValue(static::TEST_ID));
         $this->responseMock->expects($this->once())->method('withHeader')->will($this->returnSelf());
         // Act
@@ -117,7 +117,7 @@ class CorrelationIdTest extends \PHPUnit_Framework_TestCase
         );
         $this->generatorMock->expects($this->never())->method('create')->will($this->returnValue(static::TEST_ID));
         $this->requestMock->expects($this->once())->method('withHeader')->will($this->returnSelf());
-        $this->requestMock->expects($this->exactly(2))->method('getHeaderLine')->with($customHeaderKey)
+        $this->requestMock->expects($this->once())->method('getHeaderLine')->with($customHeaderKey)
             ->will($this->returnValue(static::TEST_ID));
         $this->responseMock->expects($this->once())->method('withHeader')->with($customHeaderKey)
             ->will($this->returnSelf());
@@ -144,7 +144,7 @@ class CorrelationIdTest extends \PHPUnit_Framework_TestCase
         $this->sut = new CorrelationId([], $this->callback, $this->generatorMock);
         $this->generatorMock->expects($this->never())->method('create')->will($this->returnValue(static::TEST_ID));
         $this->requestMock->expects($this->once())->method('withHeader')->will($this->returnSelf());
-        $this->requestMock->expects($this->exactly(2))->method('getHeaderLine')
+        $this->requestMock->expects($this->once())->method('getHeaderLine')
             ->will($this->returnValue(static::TEST_ID));
         $this->responseMock->expects($this->once())->method('withHeader')->will($this->returnSelf());
         // Act
