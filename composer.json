@@ -1,0 +1,56 @@
+{
+    "name": "pachico/slim-correlationid",
+    "type": "library",
+    "description": "Middlewarez",
+    "keywords": [
+        "pachico",
+        "correlation id",
+        "cId",
+        "request id",
+        "slim",
+        "middleware"
+    ],
+    "homepage": "https://github.com/pachico/slim-correlationid",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariano F.co Benítez Mulet",
+            "email": "pachicodev@gmail.com",
+            "homepage": "https://github.com/pachico",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "~5.4|~7.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.0||~5.0",
+        "squizlabs/php_codesniffer": "~1.5||~2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pachico\\SlimCorrelationId\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pachico\\SlimCorrelationId\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "sniff": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests examples",
+        "format": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests examples"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
