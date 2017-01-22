@@ -2,11 +2,13 @@
 
 [![Build Status](https://travis-ci.org/pachico/slim-correlationid.svg?branch=master)](https://travis-ci.org/pachico/slim-correlationid) [![codecov](https://codecov.io/gh/pachico/slim-correlationid/branch/master/graph/badge.svg)](https://codecov.io/gh/pachico/slim-correlationid) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pachico/slim-correlationid/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pachico/slim-correlationid/?branch=master)
 
-Resolves and propagates correlation ids. If none, it will create one. If callable is provided, it will invoke it as soon as it resolves/creates it.
+Resolves and propagates correlation ids. If not found, it creates one. If callable is provided, it will invoke it as soon as it resolves/creates it. Especially useful for microservices platforms.
 
-Especially useful for microservices platforms.
+It has been designed with [Slim framework](https://www.slimframework.com/) in mind but it works with any [double pass middleware signature](https://github.com/http-interop/http-middleware#41-double-pass):
 
-It has been designed with [Slim framework](https://www.slimframework.com/) in mind but it works with any middleware signature like `fn(request, response, next): response`.
+```php
+fn(request, response, next): response
+```
 
 Refer to [Slim documentation](https://www.slimframework.com/docs/concepts/middleware.html) for details about middlewares.
 
@@ -43,7 +45,7 @@ $app->add(new Middleware\CorrelationId());
 <?php
 
 /**
- * It is also possible to set which key in the request, it will try to resolve it from
+ * It is also possible to set which key in the request haader it will try to resolve it from.
  */
 use \Pachico\SlimCorrelationId\Middleware;
 
@@ -52,6 +54,12 @@ $app->add(new Middleware\CorrelationId([
     'header_key' => 'X-CustomCorrelation-Id'
 ]));
 
+```
+Note: default key is `Pachico\SlimCorrelationId\Model\CorrelationId::DEFAULT_HEADER_KEY`
+
+```php
+echo \Pachico\SlimCorrelationId\Model\CorrelationId::DEFAULT_HEADER_KEY;
+// X-Correlation-Id
 ```
 
 ### With custom callable

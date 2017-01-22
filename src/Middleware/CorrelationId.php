@@ -70,11 +70,10 @@ class CorrelationId
     private function resolveCorrelationId(Message\RequestInterface $request)
     {
         $headerLine = $request->getHeaderLine($this->settings['header_key']);
-        
         if (!empty($headerLine)) {
             return new Model\CorrelationId($headerLine);
         }
-
+        
         return Model\CorrelationId::create($this->idGenerator);
     }
 }
